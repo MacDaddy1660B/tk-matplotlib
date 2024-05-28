@@ -49,7 +49,7 @@ class PlotWdg(tkinter.Canvas):
                 master=self.master
                 )
         self.figCanvas.draw()
-        self.figCanvas.get_tk_widget().pack()
+        self.Wdg = self.figCanvas.get_tk_widget()
 
     def drawVlines(self, vCenter):
         self.vlinesCollection = self.ax.vlines(
@@ -94,8 +94,8 @@ if __name__=='__main__':
             )
     sliderWdg.bind("<Motion>", lambda e: plotWdg.updateVerticalBars(sliderWdg.get()))
     
-    for wdg in (sliderWdg, plotWdg):
-        wdg.pack()
+    for wdg in (sliderWdg, plotWdg.Wdg):
+        wdg.grid()
         #pass
 
     root.mainloop()
