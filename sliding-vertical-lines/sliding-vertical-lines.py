@@ -56,7 +56,6 @@ class PlotWdg(tkinter.Canvas):
                 [vCenter-self.vWidth,vCenter+self.vWidth],
                 numpy.array( [line.get_ydata().min() for line in self.plotLine] ).min(),
                 numpy.array( [line.get_ydata().max() for line in self.plotLine] ).max(),
-                #*self.ax.get_ybound(),
                 color='red',
                 linestyles='dotted',
                 )
@@ -96,6 +95,5 @@ if __name__=='__main__':
     
     for wdg in (sliderWdg, plotWdg.Wdg):
         wdg.grid()
-        #pass
 
     root.mainloop()
